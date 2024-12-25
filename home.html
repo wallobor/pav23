@@ -4,6 +4,8 @@
             PAV23 - PAVeintitre
         </title>
 
+        <link rel="icon" type="image/x-icon" href="assets/pav23logo.png">
+
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0, minimum-scale=1.0, user-scalable=yes">
 
         <style>
@@ -40,7 +42,14 @@
             .worksPreview {
                 position: relative;
                 transition: all 1s ease;
-                width: 39vw;
+                border:0; 
+                background-color: #202027; 
+                border-radius: 20px; 
+                scale: 90%;
+            }
+
+            .worksPreview:hover {
+                scale: 100%;
             }
 
             [name='menu'] {
@@ -83,6 +92,14 @@
                 height: 10vh;
                 width: 100vw;
                 background-image: linear-gradient(to left, #ffa724, #ff5024);
+                box-shadow: 10px 10px 50px 10px black;
+                z-index: 101;
+            }
+
+            [data-type='label'] {
+                font-family: impact;
+                font-size: xx-large;
+                color: black;
             }
         </style>
 
@@ -136,6 +153,13 @@
             previousZoom = zoomLevel;
             return zoomLevel;
         }
+
+        function scrollTo(id) {
+            document.querySelector('[data-scroll=' + id + ']').scrollIntoView({ behavior: 'smooth' })
+        }
+
+        console.warn = () => {};
+        console.error = () => {};
         </script>
     </head>
 
@@ -155,13 +179,13 @@
                 </div>
 
                 <div name="menu" id="menuIn">
-                    <img name="menuItems" id="canTilt" src="assets/icoHome.png" alt="">
-                    <img name="menuItems" id="canTilt" src="assets/icoCollection.png" alt="">
-                    <img name="menuItems" id="canTilt" src="assets/icoArchive.png" alt="">
-                    <img name="menuItems" id="canTilt" src="assets/icoExperimental.png" alt="">
+                    <img name="menuItems" id="canTilt" src="assets/icoHome.png" alt="" onclick="location.href='home.html'">
+                    <img name="menuItems" id="canTilt" src="assets/icoCollection.png" alt="" onclick="window.scrollTo('collection')">
+                    <img name="menuItems" id="canTilt" src="assets/icoArchive.png" alt="" onclick="window.scrollTo('archive')">
+                    <img name="menuItems" id="canTilt" src="assets/icoExperimental.png" alt="" onclick="window.open('experimental/rngesus.html','__blank')">
                 </div>
 
-                <div style="animation: onfocusedDivColor infinite alternate 5s ease; align-content: end;">
+                <div data-scroll="topmost" style="animation: onfocusedDivColor infinite alternate 5s ease; align-content: end;">
                     <a style="font-family: impact; font-size: 70px; position: relative; justify-self: center;"><i>BEHIND THE NAME</i></a>
                     <br>
 
@@ -197,16 +221,67 @@
                 </div>
             </div>
 
-            <div id="break"></div>
+            <div data-scroll="collection" id="break"></div>
 
             <div style="background-image: linear-gradient(to bottom, #e7571d, #d18a20); background-color: unset; height: max-content;">
+                <br>
                 <a style="font-family: impact; font-size: 70px; position: relative; top: -10%;"><i>OUR WORKS</i></a>
                 <br><br><br><br><br>
 
-                <img src="assets/craftndraft.png" class="worksPreview" alt="" width="49%" onpointerover="this.style.scale = '103%'; this.style.zIndex = '2';" onpointerleave="this.style.scale = '100%'; this.style.zIndex = '1';" onclick="">
-                <img src="assets/Sueb sedang malas.png" class="worksPreview" alt="" width="49%" onpointerover="this.style.scale = '103%'; this.style.zIndex = '2';" onpointerleave="this.style.scale = '100%'; this.style.zIndex = '1';" onclick="">
-                <video src="assets/HASIL JADI MCLAREN FIX.mp4" class="worksPreview"  controls width="49%" onpointerover="this.style.scale = '103%'; this.style.zIndex = '2';" onpointerleave="this.style.scale = '100%'; this.style.zIndex = '1';"></video>
-                <video src="assets/Tugas Fix.mp4" class="worksPreview" controls width="49%" onpointerover="this.style.scale = '103%'; this.style.zIndex = '2';" onpointerleave="this.style.scale = '100%'; this.style.zIndex = '1';"></video>
+                <iframe src="https://drive.google.com/file/d/1KCfmcGqxpiG9jotWp3LMYgpmNJIcJYtO/preview" style="height: 50vh; width: 42.5vw;" class="worksPreview" allow="autoplay" controls></iframe>
+
+                <iframe src="https://drive.google.com/file/d/1XKedgWC8mRhM0iGn4sQkoyjDjEikJ14m/preview" style="height: 50vh; width: 42.5vw;" class="worksPreview" allow="autoplay" controls></iframe>
+
+                <iframe src="https://drive.google.com/file/d/1fIMmkLs1EIMMz396xXnpO4K4dBR_0pEn/preview" style="height: 50vh; width: 42.5vw;" class="worksPreview" allow="autoplay" controls></iframe>
+
+                <iframe src="https://drive.google.com/file/d/1ROWwk-epk8peeM5HgHV4beo5mm8XZS7h/preview" style="height: 50vh; width: 42.5vw;" class="worksPreview" allow="autoplay" controls></iframe>
+
+                <iframe src="https://drive.google.com/file/d/1MoIhzWaHZKwYBybsIDQV7OopxeoWGIrk/preview" style="height: 50vh; width: 42.5vw;" class="worksPreview" allow="autoplay" controls></iframe>
+
+                <iframe src="https://drive.google.com/file/d/1Dvs-WsZBCAYCDNBeADssu506Lh7Ubw-i/preview" style="height: 50vh; width: 42.5vw;" class="worksPreview" allow="autoplay" controls></iframe>
+
+                <iframe src="https://drive.google.com/file/d/1bw21U_GwY8QzSKzeSOSCj7w_w3dWjsb4/preview" style="height: 50vh; width: 42.5vw;" class="worksPreview" allow="autoplay" controls></iframe>
+
+                <iframe src="https://drive.google.com/file/d/1Fi778I4osIgdenUt-eP7zANO024tPXtZ/preview" style="height: 50vh; width: 42.5vw;" class="worksPreview" allow="autoplay" controls></iframe>
+                
+                <iframe src="https://drive.google.com/file/d/1KlZlhrNVC2FrgBxE-rkm1w3aXbjjmqcp/preview" style="height: 50vh; width: 42.5vw;" class="worksPreview" allow="autoplay" controls></iframe>
+
+                <iframe src="https://drive.google.com/file/d/157gmm32nONhU33_SZ7E8UOPVYx9F6mg4/preview" style="height: 50vh; width: 42.5vw;" class="worksPreview" allow="autoplay" controls></iframe>
+
+                <iframe src="https://drive.google.com/file/d/1uYRNhebDMjQNHoykvJ_cFE0RWnPUUYbb/preview" style="height: 50vh; width: 90vw;" class="worksPreview" allow="autoplay" controls></iframe>
+
+                <iframe src="https://drive.google.com/embeddedfolderview?id=1gfh1xJH4YtsNvi5HImVRrPVQmhk8vLZL#grid" class="worksPreview" style="height: 50vh; width: 90vw;"></iframe>
+
+                <iframe src="https://drive.google.com/embeddedfolderview?id=1xlgqSMaCbRFD8ZHCfPSQMFcbJcwUsfeo#grid" class="worksPreview" style="height: 50vh; width: 90vw;"></iframe>
+
+                <iframe src="https://drive.google.com/embeddedfolderview?id=1UOVPpBTN2LQsUiAo2NTmZPFqBqin94Sd#grid" class="worksPreview" style="height: 50vh; width: 90vw;"></iframe>
+
+                <iframe src="https://drive.google.com/embeddedfolderview?id=1855fJ0Q3a4RvckT90c57OcKBnsLZr80n#grid" class="worksPreview" style="height: 50vh; width: 90vw;"></iframe>
+
+                <iframe src="https://drive.google.com/embeddedfolderview?id=158rf0EQIISmmzKrch491ID50DavqwbTa#grid" class="worksPreview" style="height: 50vh; width: 90vw;"></iframe>
+
+                <iframe src="https://drive.google.com/embeddedfolderview?id=1SO-tJSSt5ekyDj8-zyHjDgLN5h16UgG4#grid" class="worksPreview" style="height: 50vh; width: 90vw;"></iframe>
+                <br><br>
+            </div>
+
+            <div data-scroll="archive" id="break"></div>
+
+            <div style="background-image: linear-gradient(to bottom, #e7571d, #d18a20); background-color: unset; height: max-content;">
+                <br>
+                <a style="font-family: impact; font-size: 70px; position: relative; top: -10%;"><i>OUR MEMORY</i></a>
+                <br><br><br><br><br>
+
+                <iframe src="https://drive.google.com/embeddedfolderview?id=1T26XnMlrMlkK5B_8h550-pkaKQX9HCyh#grid" class="worksPreview" style="height: 75vh; width: 90vw;"></iframe>
+
+                <iframe src="https://drive.google.com/embeddedfolderview?id=1bT2fO6H1ESE5q6oVySEUgNPwgg8vlmwu#grid" class="worksPreview" style="height: 75vh; width: 90vw;"></iframe>
+
+                <iframe src="https://drive.google.com/embeddedfolderview?id=1tNad0IxMdqFr7tH5XyU2f5Xn-owxaor1#grid" class="worksPreview" style="height: 75vh; width: 90vw;"></iframe>
+
+                <iframe src="https://drive.google.com/embeddedfolderview?id=1aeUp0E7bouHXFtmr-lTujtcC2uj7tApa#grid" class="worksPreview" style="height: 75vh; width: 90vw;"></iframe>
+
+                <iframe src="https://drive.google.com/embeddedfolderview?id=1FzvAPF5f2eEE-SanekcEywaBMPn-GDMC#grid" class="worksPreview" style="height: 75vh; width: 90vw;"></iframe>
+
+                <iframe src="https://drive.google.com/embeddedfolderview?id=1RgnwQjLGBXwRQru5OsY4quEAsZJSAbKr#grid" class="worksPreview" style="height: 75vh; width: 90vw;"></iframe>
             </div>
         </center>
     </body>
